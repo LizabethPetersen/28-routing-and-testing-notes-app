@@ -4,7 +4,7 @@
   // box model
   position: static;
   display: block;
-  margin: 0;
+  margin: 5 10;
   padding: 0;
   border: none;
   outline: none;
@@ -20,10 +20,11 @@
 
   // color
   background: none;
-  color: $color-black;
+  color: $color-primary;
 
   // other
   list-style: none;
+  list-style-position: inside;
 }
 
 form *:focus {

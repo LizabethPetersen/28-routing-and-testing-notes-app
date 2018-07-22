@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light"');
+@import url('https://fonts.googleapis.com/css?family=Lora|Shadows+Into+Light+Two');
 
 // label these according to a:link, a:hover, a:visited, h1, h2, h3, p, etc.
-$color-error: #ff0000;
-$color-secondary: #F0DCB6;
-$color-primary: #ff777a;
+$color-bg: #A7D2CB;
+
+$color-primary: rgb(124, 49, 77);
+$color-secondary: #C98474;
+$color-tertiary: #F2D388;
+
+$color-error: red;
+
 $color-success: #77ff7a;
-$color-white: #fff;
+
+$color-form-box: #F2D388;
+$color-form-focus: rgb(124, 49, 77);
+
 $color-black: #000;
-$color-lightgrey: #B5BAC3;
+$color-white: #fff;
+
+$color-darkgrey: #383838;
 $color-grey: #7A7D84;
-$color-darkgrey: #6E7177;
-$color-darkcyan: #008b8b;
+$color-lightgrey: #B5BAC3;
 
 $pad: 0.5em;
 
-$acme-font: 'Acme', sans-serif;
-$shadow-font: 'Shadows Into Light', cursive;
-$font-primary: 'Lato', sans-serif;
-$font-secondary: 'Roboto Mono', monospace;
-
-$bg-texture: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+$headline-font: 'Shadows Into Light Two', cursive;
+$font-primary: 'Lora', serif;
+$font-secondary: 'Lora', serif;
