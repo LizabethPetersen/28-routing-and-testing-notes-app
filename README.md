@@ -1,22 +1,6 @@
-# DATA STRUCTURES AND ALGORITHMS TEMPLATE README
-## Travis Badge
-<!-- YOUR TRAVIS CI BADGE HERE -->
 
-## Challenge
-<!-- YOUR PROBLEM DOMAIN HERE -->
+# LAB 28 - ROUTING AND TESTING APP
+[![Build Status](https://travis-ci.org/LizabethPetersen/28-routing-and-testing-notes-app.svg?branch=master)](https://travis-ci.org/LizabethPetersen/28-routing-and-testing-notes-app)
 
-## Whiteboarding Solution:
- <!--YOUR GITHUB IMAGE URL BELOW  -->
-![alt text](YOUR-IMAGE-URL-HERE.jpg)
-
-## Code Solution
-<!-- YOUR CODE HERE -->
-
-<!-- ====================================================================== -->
-
-# LAB TEMPLATE README
-## Travis Badge
-<!-- YOUR TRAVIS CI BADGE HERE -->
-
-## Code
-<!-- YOUR CODE DESCRIPTION HERE -->
+## DOCUMENTATION
+This is a note app, incorporating form fields for a title and content.
