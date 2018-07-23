@@ -6,6 +6,7 @@ html, body {
   position: relative; 
   font-family: $headline-font;
 }
+
 head, script, link  { display: none; }
 p { display: inline-block; }
 span,em,strong { display: inline; }
@@ -21,21 +22,26 @@ body {
   min-height: 900px;
 }
 
-blockquote {
-  border-left: $pad solid $color-lightgrey;
-  padding-left: $pad;
-}
-
 @for $i from 6 through 1 {
   h#{$i} {
     font-size: 9/($i + 2) * 1em;;
+    padding: 0;
+    margin: 3px 0;
   }
+}
+
+h1 {
+  text-align: center;
 }
 
 h2.error {
   color: $color-error;
 }
 
+p.about {
+  font-size: 1.3em;
+  color: #c98474;
+}
 
 // form
 label {
@@ -48,13 +54,13 @@ textarea, input {
   background: $color-form-box;
   border: none;
   padding: 12px;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-bottom: 15px;
   transition: 350ms all;
 
   &:focus {
     background: $color-form-focus;
-    color: $color-form-box;
+    color: $color-secondary;
   }
 
   &::placeholder {
@@ -88,33 +94,17 @@ button,input[type="submit"] {
   }
 }
 
-footer {
-  height: 40px;
-  background: #000;
-  border-top: solid 5px #fff;
-  margin-top: 100px;
-}
-
-// lists
-ul,ol,li { margin-left: $pad * 2; }
-li { display: list-item;
-  font-family: $font-primary;
-  font-weight: bold;
-}
-ul li { list-style: disc; }
-ol li { list-style: decimal; }
-ol ol li , ul ol li { list-style: lower-alpha; }
-ol ul li , ul ul li { list-style: square; }
-
 nav ul { 
-  list-style-type: none;
+  list-style: none;
+  display: inline;
+  text-align: center;
 }
 
 nav ul li a { 
   display: inline-block;
-  padding: 0.25em 1em;
-  text-decoration: none; /* no underline */
-  color: $color-primary; /* dark blue */
+  padding: 0.25em 0.5em;
+  text-decoration: none; 
+  color: $color-primary; 
   font-family: $headline-font;
   font-size: 1em;
 }	
@@ -122,4 +112,13 @@ nav ul li a {
 nav ul li a:hover, nav ul li a:focus { 
   color: $color-secondary; 
   font-weight: bold;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $color-primary;
 }

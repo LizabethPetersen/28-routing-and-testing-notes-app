@@ -47,14 +47,6 @@ export default class Dashboard extends React.Component {
       </ul>
     );
   }
-  // handleRemoveNote = (note, deleteNote) => {
-  // return Object.notes(note)
-  // .filter(_id => _id !== deleteNote)
-  // .reduce((result, current) => {
-  // result[current] = note[current];
-  // return result;
-  // }, {});
-  // }
 
   render() {
     return (
