@@ -1,0 +1,124 @@
+@import "vars";
+
+
+// content
+html, body {
+  position: relative; 
+  font-family: $headline-font;
+}
+
+head, script, link  { display: none; }
+p { display: inline-block; }
+span,em,strong { display: inline; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+
+body {
+  background: $color-bg;
+  font-size: 16px;
+}
+
+#root {
+  min-height: 900px;
+}
+
+@for $i from 6 through 1 {
+  h#{$i} {
+    font-size: 9/($i + 2) * 1em;;
+    padding: 0;
+    margin: 3px 0;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+h2.error {
+  color: $color-error;
+}
+
+p.about {
+  font-size: 1.3em;
+  color: #c98474;
+}
+
+// form
+label {
+  font-size: 1.25em;
+  font-weight: bolder;
+  margin-bottom: $pad;
+}
+
+textarea, input {
+  background: $color-form-box;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  transition: 350ms all;
+
+  &:focus {
+    background: $color-form-focus;
+    color: $color-secondary;
+  }
+
+  &::placeholder {
+    font-family: $headline-font;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-secondary;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+button,input[type="submit"] {
+  background: $color-secondary;
+  padding: $pad;
+  border: none;
+  border-radius: 3px;
+  font-family: $font-primary;
+  color: $color-tertiary;
+  font-size: 14px;
+
+  &:hover {
+    background: $color-tertiary;
+    color: $color-secondary;
+  }
+
+  &:active {
+    background: $color-secondary;
+  }
+}
+
+nav ul { 
+  list-style: none;
+  display: inline;
+  text-align: center;
+}
+
+nav ul li a { 
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none; 
+  color: $color-primary; 
+  font-family: $headline-font;
+  font-size: 1em;
+}	
+
+nav ul li a:hover, nav ul li a:focus { 
+  color: $color-secondary; 
+  font-weight: bold;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $color-primary;
+}
