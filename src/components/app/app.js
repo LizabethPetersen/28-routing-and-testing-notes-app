@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from '../dashboard/dashboard';
 import Landing from '../landing/landing';
-// import NoteItem from '../note-item/note-item';
+import NoteItem from '../note-item/note-item';
 import './app.scss';
 
 export default class App extends React.Component {
@@ -30,6 +30,11 @@ export default class App extends React.Component {
               exact
               path="/dashboard"
               component={ Dashboard }
+              />
+              <Route
+              exact
+              path="/dashboard"
+              component={ NoteItem }
               />
             </div>
           </BrowserRouter>

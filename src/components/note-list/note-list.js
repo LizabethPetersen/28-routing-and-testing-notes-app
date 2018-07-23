@@ -1,1 +1,1 @@
-
+import './note-list.scss';
