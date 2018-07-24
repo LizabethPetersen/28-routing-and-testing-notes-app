@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './create-note-form.scss';
 
 const defaultState = {
   title: '',
@@ -9,12 +10,12 @@ const defaultState = {
 export default class CreateNoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = defaultState;
+    this.state = props.note ? props.note : defaultState;
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState(defaultState);
   }
 
@@ -26,28 +27,32 @@ export default class CreateNoteForm extends React.Component {
   }
 
   render() {
+    const buttonText = this.props.note ? 'Update Note' : 'Remove Note';
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <input 
+      <form onSubmit={ this.handleSubmit } data-cy="note-form">
+        <input className="note-form-input"
           type="text"
           name="title"
           placeholder="Note"
           value={ this.state.title }
           onChange={ this.handleChange }
+          data-cy="title"
         />
-        <input
+        <input className="note-form-input"
         type="text"
         name="content"
         placeholder="What's Needed?"
         value={ this.state.content }
         onChange={ this.handleChange }
+        data-cy="content"
         />
-        <button type="submit">Create Reminder</button>
+        <button type="submit">{buttonText}</button>
       </form>
     );
   }
 }
 
 CreateNoteForm.propTypes = {
-  handleAddNote: PropTypes.func,
+  handleComplete: PropTypes.func,
+  note: PropTypes.object,
 };

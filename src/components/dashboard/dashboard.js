@@ -1,7 +1,8 @@
 import uuid from 'uuid/v4';
 import React from 'react';
 import CreateNoteForm from '../create-note-form/create-note-form';
-// import NoteList from '../note-list/note-list';
+import NoteItem from '../note-item/note-item';
+import { renderIf } from '../../lib/utils';
 import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
@@ -31,6 +32,22 @@ export default class Dashboard extends React.Component {
     });
   }
 
+  handleRemoveNote = (noteToRemove) => {
+    this.setState((previousState) => {
+      return {
+        notes: previousState.notes.filter(note => note._id !== noteToRemove._id),
+      };
+    });
+  }
+
+  handleUpdateNote = (noteToUpdate) => {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => (note._id === noteToUpdate._id ? noteToUpdate : note)),
+      };
+    });
+  }
+
   handleNoteList = () => {
     return (
       <ul>
@@ -38,9 +55,12 @@ export default class Dashboard extends React.Component {
           this.state.notes.map((note) => {
             return (
               <li key={note._id}>
-                {note.title} : {note.content}
+                <NoteItem
+                note={note}
+                handleRemoveNote={this.handleRemoveNote}
+                handleUpdateNote={this.handleUpdateNote}
+                />
               </li>
-
             );
           })
         }
@@ -51,11 +71,11 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <section className="dashboard">
-        <CreateNoteForm handleAddNote={ this.handleAddNote } />
+        <CreateNoteForm handleComplete={ this.handleAddNote } />
         {
-           this.state.error && <h2 className="error">You must enter a note.</h2>
+           renderIf(this.state.error, <h2 className="error">You must enter a note.</h2>)
         }
-       <h3>My Notes:</h3>
+       <h3 className="my-notes">My Notes:</h3>
        { this.handleNoteList() }
      </section>
     );

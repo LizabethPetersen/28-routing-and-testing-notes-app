@@ -1,0 +1,9 @@
+@import '../../style/vars';
+
+.create-note-form {
+  .note-form-input {
+    font-family: $font-primary;
+    font-size: 1.4em;
+    text-transform: lowercase;
+  }
+}
