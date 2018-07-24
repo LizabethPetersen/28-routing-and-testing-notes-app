@@ -75,7 +75,7 @@ export default class Dashboard extends React.Component {
         {
            renderIf(this.state.error, <h2 className="error">You must enter a note.</h2>)
         }
-       <h3>My Notes:</h3>
+       <h3 className="my-notes">My Notes:</h3>
        { this.handleNoteList() }
      </section>
     );

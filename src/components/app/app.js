@@ -9,7 +9,7 @@ export default class App extends React.Component {
     return (
       <div className="app">
           <BrowserRouter>
-            <div id="gradient">
+            <div>
               <header>
                 <h1>To-Do: <br/>Note Reminder App</h1>
                 <nav>

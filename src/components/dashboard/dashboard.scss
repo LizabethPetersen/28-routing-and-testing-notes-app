@@ -1,1 +1,10 @@
 @import '../../style/vars';
+
+.dashboard {
+  .error {
+    color: $color-error;
+  }
+  .my-notes{
+    text-align: center;
+  }
+}

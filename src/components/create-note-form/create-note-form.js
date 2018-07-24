@@ -30,7 +30,7 @@ export default class CreateNoteForm extends React.Component {
     const buttonText = this.props.note ? 'Update Note' : 'Remove Note';
     return (
       <form onSubmit={ this.handleSubmit } data-cy="note-form">
-        <input 
+        <input className="note-form-input"
           type="text"
           name="title"
           placeholder="Note"
@@ -38,7 +38,7 @@ export default class CreateNoteForm extends React.Component {
           onChange={ this.handleChange }
           data-cy="title"
         />
-        <input
+        <input className="note-form-input"
         type="text"
         name="content"
         placeholder="What's Needed?"
