@@ -10,12 +10,12 @@ const defaultState = {
 export default class CreateNoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = defaultState;
+    this.state = props.note ? props.note : defaultState;
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.handleComplete(this.state);
     this.setState(defaultState);
   }
 
@@ -27,14 +27,16 @@ export default class CreateNoteForm extends React.Component {
   }
 
   render() {
+    const buttonText = this.props.note ? 'Update Note' : 'Remove Note';
     return (
-      <form onSubmit={ this.handleSubmit }>
+      <form onSubmit={ this.handleSubmit } data-cy="note-form">
         <input 
           type="text"
           name="title"
           placeholder="Note"
           value={ this.state.title }
           onChange={ this.handleChange }
+          data-cy="title"
         />
         <input
         type="text"
@@ -42,13 +44,15 @@ export default class CreateNoteForm extends React.Component {
         placeholder="What's Needed?"
         value={ this.state.content }
         onChange={ this.handleChange }
+        data-cy="content"
         />
-        <button type="submit">Create Reminder</button>
+        <button type="submit">{buttonText}</button>
       </form>
     );
   }
 }
 
 CreateNoteForm.propTypes = {
-  handleAddNote: PropTypes.func,
+  handleComplete: PropTypes.func,
+  note: PropTypes.object,
 };

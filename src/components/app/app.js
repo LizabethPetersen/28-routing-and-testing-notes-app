@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Dashboard from '../dashboard/dashboard';
 import Landing from '../landing/landing';
-import NoteItem from '../note-item/note-item';
 import './app.scss';
 
 export default class App extends React.Component {
@@ -17,7 +16,6 @@ export default class App extends React.Component {
                   <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/dashboard">Write a Note</Link></li>
-                    <li><Link to="/note-item">Itemized Notes</Link></li>
                   </ul>
                 </nav>
               </header>
@@ -30,11 +28,6 @@ export default class App extends React.Component {
               exact
               path="/dashboard"
               component={ Dashboard }
-              />
-              <Route
-              exact
-              path="/dashboard"
-              component={ NoteItem }
               />
             </div>
           </BrowserRouter>
